@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import ProfileButton from './ProfileButton';
 import Search from './Search';
 
 const Header = () => {
@@ -19,10 +20,7 @@ const Header = () => {
 
         <div className="flex items-center space-x-5 flex-1 justify-end w-full">
           <Search />
-
-          <div className="hidden md:block p-2 rounded-full bg-blue-600 text-white font-semibold w-fit text-2xl">
-            SM
-          </div>
+          <ProfileButton />
         </div>
       </div>
     </header>

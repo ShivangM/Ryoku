@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Modal from '@/components/Modal';
 import { Metadata } from 'next';
 import Footer from '@/components/Footer';
+import { Toaster } from 'react-hot-toast';
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -58,6 +59,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Modal />
+        <Toaster position="top-center" reverseOrder={false} />
         <Footer />
       </body>
     </html>

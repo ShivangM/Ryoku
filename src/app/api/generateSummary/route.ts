@@ -3,7 +3,6 @@ import { NextResponse } from 'next/server';
 
 export async function POST(request: Request) {
   const { todos } = await request.json();
-  console.log(todos);
 
   const response = await openai.createChatCompletion({
     model: 'gpt-3.5-turbo',
@@ -13,7 +12,7 @@ export async function POST(request: Request) {
     messages: [
       {
         role: 'system',
-        content: 'When responding, say Welcome to Trello 2.0 Tasks App',
+        content: 'When responding, say Welcome to Ryoku Tasks App',
       },
       {
         role: 'user',
@@ -26,8 +25,8 @@ export async function POST(request: Request) {
 
   const data = response.data;
 
-  console.log('DATA IS: ', data);
-  console.log(data.choices[0].message);
+  // console.log('DATA IS: ', data);
+  // console.log(data.choices[0].message);
 
   return NextResponse.json(data.choices[0].message);
 }
