@@ -1,10 +1,7 @@
-'use client';
 import LoginForm from '@/components/LoginForm';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect } from 'react';
-import toast from 'react-hot-toast';
 
 export const metadata: Metadata = {
   title: 'Ryoku | Login',
@@ -20,12 +17,6 @@ type Props = {
 };
 
 const LoginPage = ({ searchParams: { verified } }: Props) => {
-  useEffect(() => {
-    if (verified === 'true') {
-      toast.success('Account verified successfully, Please login to continue.');
-    }
-  }, [verified]);
-
   return (
     <section className="bg-dark">
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
